@@ -16,7 +16,7 @@ import javax.swing.filechooser.FileFilter;
 /**
  * A picture from an image file.
  */
-public class Picture implements Shape
+public class Picture implements Shape, Movable
 {
     private BufferedImage image;
     private JLabel label = new JLabel();    
@@ -226,7 +226,6 @@ public class Picture implements Shape
      * Gets the color of a pixel.
      * @param x the x-coordinate (column) of the pixel
      * @param y the y-coordinate (row) of the pixel
-     * @param color the new color for the pixel
      */
     public Color getColorAt(int x, int y)
     {
@@ -245,7 +244,7 @@ public class Picture implements Shape
      * Sets the color of a pixel.
      * @param x the x-coordinate (column) of the pixel
      * @param y the y-coordinate (row) of the pixel
-     * @param the color of the pixel at the given row and column
+     * @param color the color of the pixel at the given row and column
      */
     public void setColorAt(int x, int y, Color color)
     {

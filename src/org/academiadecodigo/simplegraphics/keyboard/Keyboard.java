@@ -34,7 +34,7 @@ public class Keyboard implements KeyListener {
 
     /**
      * Remove an existing Keyboard event listener
-     * @param keyboardEvent
+     * @param keyboardEvent the event to remove
      */
     public void removeEventListener(KeyboardEvent keyboardEvent) {
         keyboardEventArrayList.remove(keyboardEvent);
