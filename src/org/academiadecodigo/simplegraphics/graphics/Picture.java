@@ -41,9 +41,13 @@ public class Picture implements Shape, Movable {
     /**
      * Constructs an image from a given file or URL.
      *
+     * @param x the leftmost x-coordinate
+     * @param y the topmost y-coordinate
      * @param source the filename or URL
      */
-    public Picture(String source) {
+    public Picture(double x, double y, String source) {
+        this.x = x;
+        this.y = y;
         load(source);
     }
 
