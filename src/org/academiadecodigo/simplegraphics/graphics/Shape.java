@@ -40,6 +40,11 @@ public interface Shape {
     void draw();
 
     /**
+     * Deletes the shape from screen
+     */
+    void delete();
+
+    /**
      * Changes the size of the shape
      *
      * @param dw the amount by which to resize the width on each side

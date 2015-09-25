@@ -104,11 +104,18 @@ public class Ellipse implements Shape, Colorable, Fillable, Movable {
     }
 
     /**
-     * Draws this ellipse.
+     * Draws this ellipse on the canvas.
      */
     public void draw() {
         filled = false;
         Canvas.getInstance().show(this);
+    }
+
+    /**
+     * Deletes this ellipse from the canvas
+     */
+    public void delete() {
+        Canvas.getInstance().hide(this);
     }
 
     /**

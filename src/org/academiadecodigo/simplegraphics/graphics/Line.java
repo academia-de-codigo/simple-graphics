@@ -117,6 +117,13 @@ public class Line implements Shape, Colorable, Movable {
         Canvas.getInstance().show(this);
     }
 
+    /**
+     * Deletes this line from the canvas.
+     */
+    public void delete() {
+        Canvas.getInstance().hide(this);
+    }
+
     public String toString() {
         return "Line[x1=" + x1 + ",y1=" + y1 + ",x2=" + x2 + ",y2=" + y2 + "]";
     }

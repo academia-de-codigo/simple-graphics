@@ -80,6 +80,13 @@ public class Canvas {
         repaint();
     }
 
+    public void hide(Shape s) {
+        if (shapes.contains(s)) {
+            shapes.remove(s);
+        }
+        repaint();
+    }
+
     /**
      * Repaints the screen
      */

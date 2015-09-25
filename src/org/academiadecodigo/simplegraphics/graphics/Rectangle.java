@@ -123,6 +123,14 @@ public class Rectangle implements Shape, Colorable, Fillable, Movable {
     }
 
     /**
+     * Deletes this rectangle
+     */
+    @Override
+    public void delete() {
+        Canvas.getInstance().hide(this);
+    }
+
+    /**
      * Fills this rectangle.
      */
     @Override

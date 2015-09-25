@@ -103,6 +103,13 @@ public class Text implements Shape, Colorable, Movable {
         Canvas.getInstance().show(this);
     }
 
+    /**
+     * Deletes this text from the canvas
+     */
+    public void delete() {
+        Canvas.getInstance().hide(this);
+    }
+
     public String toString() {
         return "Text[x=" + getX() + ",y=" + getY() + ",message=" + label.getText() + "]";
     }
