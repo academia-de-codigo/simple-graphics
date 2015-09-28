@@ -15,6 +15,9 @@ public class Keyboard implements KeyListener {
     KeyboardHandler handler;
     List<KeyboardEvent> keyboardEventArrayList;
 
+    /**
+     * @param handler the keyboard handler
+     */
     public Keyboard(KeyboardHandler handler) {
 
         Canvas.getInstance().addKeyListener(this);

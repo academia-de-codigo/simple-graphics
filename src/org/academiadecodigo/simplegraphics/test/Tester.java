@@ -5,8 +5,11 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.mouse.Mouse;
+import org.academiadecodigo.simplegraphics.mouse.MouseEvent;
+import org.academiadecodigo.simplegraphics.mouse.MouseHandler;
 
-public class Tester implements KeyboardHandler {
+public class Tester implements KeyboardHandler, MouseHandler {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -22,6 +25,8 @@ public class Tester implements KeyboardHandler {
         event.setKey(KeyboardEvent.KEY_SPACE);
         event.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         k.addEventListener(event);
+
+        Mouse m = new Mouse(this);
 
         Rectangle rect = new Rectangle(10, 10, 400, 400);
         rect.setColor(Color.BLACK);
@@ -73,5 +78,10 @@ public class Tester implements KeyboardHandler {
     @Override
     public void keyReleased(KeyboardEvent e) {
 
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+       System.out.println(e);
     }
 }

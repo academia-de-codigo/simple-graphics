@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.awt.image.RescaleOp;
 import java.io.File;
@@ -131,6 +132,14 @@ public class Canvas {
      */
     public void addKeyListener(KeyListener handler) {
         frame.addKeyListener(handler);
+    }
+
+    /**
+     * Adds a mouse listener to the canvas
+     * @param handler reference to the MouseListener object
+     */
+    public void addMouseListener(MouseListener handler) {
+        frame.addMouseListener(handler);
     }
 
     class CanvasComponent extends JComponent {
