@@ -97,6 +97,15 @@ public class Text implements Shape, Colorable, Movable {
     }
 
     /**
+     * Sets the text message
+     * @param message the new text message
+     */
+    public void setText(String message) {
+        label.setText(message);
+        Canvas.getInstance().repaint();
+    }
+
+    /**
      * Shows this text on the canvas.
      */
     public void draw() {

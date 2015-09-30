@@ -52,7 +52,7 @@ public class Tester implements KeyboardHandler, MouseHandler {
         Picture pic = new Picture(20, 220, "http://static0.bigstockphoto.com/thumbs/3/5/2/small2/25346960.jpg");
         pic.draw();
 
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
         smallRect.translate(100, 0);
         ellipse.translate(20, 20);
@@ -60,7 +60,7 @@ public class Tester implements KeyboardHandler, MouseHandler {
         text.translate(20, 20);
         pic.translate(40, 0);
 
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
         smallRect.grow(10, 10);
         ellipse.grow(-20, -20);
@@ -68,6 +68,9 @@ public class Tester implements KeyboardHandler, MouseHandler {
         text.grow(5, 5);
         pic.grow(-50, -50);
 
+        Thread.sleep(2000);
+
+        text.setText("Academia de Codigo");
     }
 
     @Override
