@@ -8,6 +8,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 import org.academiadecodigo.simplegraphics.mouse.Mouse;
 import org.academiadecodigo.simplegraphics.mouse.MouseEvent;
 import org.academiadecodigo.simplegraphics.mouse.MouseHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Tester implements KeyboardHandler, MouseHandler {
 
