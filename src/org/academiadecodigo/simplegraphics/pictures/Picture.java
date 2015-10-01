@@ -1,12 +1,13 @@
 package org.academiadecodigo.simplegraphics.pictures;
 
-import org.academiadecodigo.simplegraphics.graphics.*;
+import org.academiadecodigo.simplegraphics.graphics.Canvas;
 import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Movable;
+import org.academiadecodigo.simplegraphics.graphics.Shape;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Canvas;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;
@@ -14,7 +15,7 @@ import java.net.URL;
 /**
  * A picture from an image file.
  */
-public class Picture implements org.academiadecodigo.simplegraphics.graphics.Shape, Movable {
+public class Picture implements Shape, Movable {
     private BufferedImage image;
     private JLabel label = new JLabel();
     private String source;
@@ -45,8 +46,8 @@ public class Picture implements org.academiadecodigo.simplegraphics.graphics.Sha
     /**
      * Constructs an image from a given file or URL.
      *
-     * @param x the leftmost x-coordinate
-     * @param y the topmost y-coordinate
+     * @param x      the leftmost x-coordinate
+     * @param y      the topmost y-coordinate
      * @param source the filename or URL
      */
     public Picture(double x, double y, String source) {
@@ -77,10 +78,17 @@ public class Picture implements org.academiadecodigo.simplegraphics.graphics.Sha
     public void load(String source) {
         try {
             this.source = source;
-            if (source.startsWith("http://"))
+            if (source.startsWith("http://")) {
                 image = ImageIO.read(new URL(source).openStream());
-            else
-                image = ImageIO.read(new File(source));
+            } else {
+
+                URL url = getClass().getResource(source);
+                if (url != null) {
+                    image = ImageIO.read(url.openStream());
+                } else {
+                    image = ImageIO.read(new File(source));
+                }
+            }
 
             label.setIcon(new ImageIcon(image));
             label.setText("");
@@ -89,7 +97,7 @@ public class Picture implements org.academiadecodigo.simplegraphics.graphics.Sha
             label.setIcon(null);
             ex.printStackTrace();
         }
-        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
+        Canvas.getInstance().repaint();
     }
 
     /**
