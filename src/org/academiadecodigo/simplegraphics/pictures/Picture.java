@@ -76,16 +76,24 @@ public class Picture implements Shape, Movable {
      * @param source the filename or URL
      */
     public void load(String source) {
+
         try {
             this.source = source;
+
+            // Load from the web
             if (source.startsWith("http://")) {
+
                 image = ImageIO.read(new URL(source).openStream());
+
             } else {
 
-                URL url = getClass().getResource(source);
+                // Attempt to load from the class path (as in JAR file..)
+                URL url = getClass().getResource(source.startsWith("/") ? source : "/" + source);
                 if (url != null) {
                     image = ImageIO.read(url.openStream());
                 } else {
+
+                    // Load from file
                     image = ImageIO.read(new File(source));
                 }
             }
