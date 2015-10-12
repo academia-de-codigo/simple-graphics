@@ -88,4 +88,9 @@ public class Tester implements KeyboardHandler, MouseHandler {
     public void mouseClicked(MouseEvent e) {
        System.out.println(e);
     }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+
+    }
 }

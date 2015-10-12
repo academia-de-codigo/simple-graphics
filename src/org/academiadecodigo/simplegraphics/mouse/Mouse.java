@@ -4,12 +4,13 @@ import org.academiadecodigo.simplegraphics.graphics.Canvas;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 
 /**
  * Instantiate a Mouse for obtaining mouse handling capability
  */
-public class Mouse implements MouseListener {
+public class Mouse implements MouseListener, MouseMotionListener {
 
     MouseHandler handler;
 
@@ -24,6 +25,11 @@ public class Mouse implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         handler.mouseClicked(new org.academiadecodigo.simplegraphics.mouse.MouseEvent(e.getX(), e.getY()));
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        handler.mouseMoved(new org.academiadecodigo.simplegraphics.mouse.MouseEvent(e.getX(), e.getY()));
     }
 
     @Override
@@ -45,4 +51,10 @@ public class Mouse implements MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+
+    }
+
 }
