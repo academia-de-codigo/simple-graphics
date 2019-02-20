@@ -54,6 +54,28 @@ public class KeyboardEvent {
     public static final int KEY_Y = KeyEvent.VK_Y;
     public static final int KEY_Z = KeyEvent.VK_Z;
 
+    /** Function keys **/
+    public static final int KEY_F1 = KeyEvent.VK_F1;
+    public static final int KEY_F2 = KeyEvent.VK_F2;
+    public static final int KEY_F3 = KeyEvent.VK_F3;
+    public static final int KEY_F4 = KeyEvent.VK_F4;
+    public static final int KEY_F5 = KeyEvent.VK_F5;
+    public static final int KEY_F6 = KeyEvent.VK_F6;
+    public static final int KEY_F7 = KeyEvent.VK_F7;
+    public static final int KEY_F8 = KeyEvent.VK_F8;
+    public static final int KEY_F9 = KeyEvent.VK_F9;
+    public static final int KEY_F10 = KeyEvent.VK_F10;
+    public static final int KEY_F11 = KeyEvent.VK_F11;
+    public static final int KEY_F12 = KeyEvent.VK_F12;
+
+    /** Other **/
+    public static final int KEY_ENTER = KeyEvent.VK_ENTER;
+    public static final int KEY_ESC = KeyEvent.VK_ESCAPE;
+    public static final int KEY_BACK_SLASH = KeyEvent.VK_BACK_SLASH;
+    public static final int KEY_SHIFT = KeyEvent.VK_SHIFT;
+    public static final int KEY_TAB = KeyEvent.VK_TAB;
+
+
     private KeyboardEventType keyboardEventType;
     private int key;
 
