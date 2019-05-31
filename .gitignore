@@ -1,4 +1,7 @@
+target
 build
 doc
+out
+.idea
 *.iml
 .DS_Store

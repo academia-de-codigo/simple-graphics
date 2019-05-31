@@ -1,12 +1,14 @@
 <?xml version="1.0" ?>
-<project name="SimpleGraphics" default="jarfile">
+
+<project name="simple-graphics" basedir="." default="jarfile">
 
     <!-- Initialize build properties  -->
     <target name="init" description="Initializes properties">
-        <property name="project.name" value="simplegraphics" />
+        <property name="project.name" value="simple-graphics" />
         <property name="src.dir" value="src" />
         <property name="build.dir" value="build" />
         <property name="classes.dir" value="${build.dir}/classes" />
+        <property name="version" value="0.2.1-SNAPSHOT" />
     </target>
 
     <!-- Creates the build directories to hold JAR and Class files -->
@@ -14,19 +16,19 @@
         <mkdir dir="${classes.dir}" />
     </target>
 
-    <!-- Removes the build directory -->
-    <target name="clean" description="Clean up project" depends="init">
-        <delete dir="${build.dir}" />
-    </target>
-
     <!-- Compiles the source code -->
-    <target name="compile" description="Compiles the source code" depends="prepare">
-        <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+    <target name="compile" description="Compiles the code" depends="prepare">
+        <javac includeantruntime="false" srcdir="${src.dir}" destdir="${classes.dir}" />
     </target>
 
     <!-- Creates a JAR file -->
     <target name="jarfile" description="Archives the code" depends="compile">
-        <jar destfile="${build.dir}/${project.name}.jar" basedir="${classes.dir}"/>
+        <jar destfile="${build.dir}/${project.name}-${version}.jar" basedir="${classes.dir}" />
+    </target>
+
+    <!-- Removes the build directory -->
+    <target name="clean" description="Clean up" depends="init">
+        <delete dir="${build.dir}" />
     </target>
 
 </project>
