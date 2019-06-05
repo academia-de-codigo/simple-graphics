@@ -223,6 +223,7 @@ public class Picture implements Shape, Movable {
      *
      * @param x the x-coordinate (column) of the pixel
      * @param y the y-coordinate (row) of the pixel
+     * @return the color of the pixel
      */
     public org.academiadecodigo.simplegraphics.graphics.Color getColorAt(int x, int y) {
         if (image == null || x < 0 || x >= image.getWidth() || y < 0 || y >= image.getHeight()) {
@@ -265,7 +266,7 @@ public class Picture implements Shape, Movable {
      * Resizes this picture both horizontally and vertically.
      *
      * @param dw the amount by which to resize the width on each side
-     * @param dw the amount by which to resize the height on each side
+     * @param dh the amount by which to resize the height on each side
      */
     public void grow(double dw, double dh) {
         xGrow += dw;

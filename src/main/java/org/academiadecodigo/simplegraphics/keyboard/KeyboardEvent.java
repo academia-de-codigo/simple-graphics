@@ -91,7 +91,7 @@ public class KeyboardEvent {
     /**
      * Sets the type of event associated with this event
      * @see KeyboardEventType
-     * @param keyboardEventType
+     * @param keyboardEventType the event type
      */
     public void setKeyboardEventType(KeyboardEventType keyboardEventType) {
         this.keyboardEventType = keyboardEventType;

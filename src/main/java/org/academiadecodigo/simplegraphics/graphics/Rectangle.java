@@ -92,7 +92,7 @@ public class Rectangle implements Shape, Colorable, Fillable, Movable {
      * Resizes this rectangle both horizontally and vertically.
      *
      * @param dw the amount by which to resize the width on each side
-     * @param dw the amount by which to resize the height on each side
+     * @param dh the amount by which to resize the height on each side
      */
     public void grow(double dw, double dh) {
         width += 2 * dw;

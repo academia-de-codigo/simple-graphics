@@ -14,7 +14,7 @@ public interface MouseHandler {
 
     /**
      * @see java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent)
-     * @param e
+     * @param e the event
      */
     public void mouseMoved(MouseEvent e);
 

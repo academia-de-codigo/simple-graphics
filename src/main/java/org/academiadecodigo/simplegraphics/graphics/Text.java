@@ -78,7 +78,7 @@ public class Text implements Shape, Colorable, Movable {
      * Resizes this text both horizontally and vertically.
      *
      * @param dw the amount by which to resize the width on each side
-     * @param dw the amount by which to resize the height on each side
+     * @param dh the amount by which to resize the height on each side
      */
     public void grow(double dw, double dh) {
         xGrow += dw;
