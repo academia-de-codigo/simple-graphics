@@ -5,8 +5,13 @@ package org.academiadecodigo.simplegraphics.mouse;
  */
 public class MouseEvent {
 
+    /** Mouse Buttons */
+    public static final int LEFT_CLICK = java.awt.event.MouseEvent.BUTTON1;
+    public static final int RIGHT_CLICK = java.awt.event.MouseEvent.BUTTON2;
+
     private double x;
     private double y;
+    private int mouseButton;
 
     /**
      * Gets the X coordinate where the mouse clicked
@@ -32,9 +37,10 @@ public class MouseEvent {
         this.y = y;
     }
 
-    public MouseEvent(double x, double y) {
+    public MouseEvent(double x, double y, int mouseButton) {
         this.x = x;
         this.y = y;
+        this.mouseButton = mouseButton;
     }
 
     @Override
@@ -43,5 +49,13 @@ public class MouseEvent {
                 "x=" + x +
                 ", y=" + y +
                 '}';
+    }
+
+    /**
+     * Returns what button was pressed
+     * @return
+     */
+    public int getMouseButton() {
+        return mouseButton;
     }
 }
