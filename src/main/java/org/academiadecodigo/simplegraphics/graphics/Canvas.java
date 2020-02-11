@@ -28,6 +28,7 @@ public class Canvas {
         component = new CanvasComponent();
 
         frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(component);
         frame.pack();
         frame.setLocation(LOCATION_OFFSET, LOCATION_OFFSET);
@@ -169,6 +170,21 @@ public class Canvas {
                 maxy = (int) Math.max(maxy, s.getY() + s.getHeight());
             }
             return new Dimension(maxx + MARGIN, maxy + MARGIN);
+        }
+    }
+
+    public void setTitle(String title){
+        frame.setTitle(title);
+    }
+
+    public void setIcon(String imagePath){
+        try {
+            File pathToFile = new File(imagePath);
+            Image image = ImageIO.read(pathToFile);
+
+            frame.setIconImage(image);
+        } catch (IOException e) {
+            System.err.println("Was unable to Find Image.");
         }
     }
 }
