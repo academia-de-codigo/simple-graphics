@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
 
+import static org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType.KEY_PRESSED;
+import static org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType.KEY_RELEASED;
+
 /**
  * Instantiate a Keyboard for obtaining key handling capability
  */
@@ -47,6 +50,19 @@ public class Keyboard implements KeyListener {
         e.setKey(key);
         e.setKeyboardEventType(type);
         addEventListener(e);
+    }
+
+    /**
+     * Add Keyboard event listeners to a group of keys
+     * @see KeyboardEvent
+     * @param keys the key codes
+     * @see KeyboardEventType
+     * @param type the event to add
+     */
+    public void addEventListeners(int[] keys, KeyboardEventType type) {
+        for (int key : keys) {
+            addEventListener(key, type);
+        }
     }
 
     /**

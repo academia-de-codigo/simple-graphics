@@ -28,6 +28,7 @@ public class Tester implements KeyboardHandler, MouseHandler {
         k.addEventListener(event);
 
         k.addEventListener(KeyboardEvent.KEY_ENTER, KeyboardEventType.KEY_PRESSED);
+        k.addEventListeners(new int[]{KeyboardEvent.KEY_ESC, KeyboardEvent.KEY_Q}, KeyboardEventType.KEY_PRESSED);
 
         Mouse m = new Mouse(this);
 
@@ -83,6 +84,12 @@ public class Tester implements KeyboardHandler, MouseHandler {
                 break;
             case KeyboardEvent.KEY_ENTER:
                 System.out.println("ENTER WAS PRESSED");
+                break;
+            case KeyboardEvent.KEY_ESC:
+                System.out.println("ESC WAS PRESSED");
+                break;
+            case KeyboardEvent.KEY_Q:
+                System.out.println("Q WAS PRESSED");
                 break;
         }
 
