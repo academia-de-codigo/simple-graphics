@@ -36,6 +36,20 @@ public class Keyboard implements KeyListener {
     }
 
     /**
+     * Add a new Keyboard event listener
+     * @see KeyboardEvent
+     * @param key the associated key code
+     * @see KeyboardEventType
+     * @param type the event to add
+     */
+    public void addEventListener(int key, KeyboardEventType type) {
+        KeyboardEvent e = new KeyboardEvent();
+        e.setKey(key);
+        e.setKeyboardEventType(type);
+        addEventListener(e);
+    }
+
+    /**
      * Remove an existing Keyboard event listener
      * @param keyboardEvent the event to remove
      */
