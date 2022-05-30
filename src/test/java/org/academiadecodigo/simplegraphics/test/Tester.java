@@ -27,6 +27,9 @@ public class Tester implements KeyboardHandler, MouseHandler {
         event.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         k.addEventListener(event);
 
+        k.addEventListener(KeyboardEvent.KEY_ENTER, KeyboardEventType.KEY_PRESSED);
+        k.addEventListeners(new int[]{KeyboardEvent.KEY_ESC, KeyboardEvent.KEY_Q}, KeyboardEventType.KEY_PRESSED);
+
         Mouse m = new Mouse(this);
 
         Rectangle rect = new Rectangle(10, 10, 400, 400);
@@ -75,7 +78,20 @@ public class Tester implements KeyboardHandler, MouseHandler {
 
     @Override
     public void keyPressed(KeyboardEvent e) {
-        System.out.println("SPACE KEY PRESSED");
+        switch (e.getKey()){
+            case KeyboardEvent.KEY_SPACE:
+                System.out.println("SPACE KEY PRESSED");
+                break;
+            case KeyboardEvent.KEY_ENTER:
+                System.out.println("ENTER WAS PRESSED");
+                break;
+            case KeyboardEvent.KEY_ESC:
+                System.out.println("ESC WAS PRESSED");
+                break;
+            case KeyboardEvent.KEY_Q:
+                System.out.println("Q WAS PRESSED");
+                break;
+        }
 
     }
 
