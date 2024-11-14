@@ -81,12 +81,11 @@ public class Picture implements Shape, Movable {
             this.source = source;
 
             // Load from the web
-            if (source.startsWith("http://")) {
+            if (source.startsWith("http://") || source.startsWith("https://")) {
 
                 image = ImageIO.read(new URL(source).openStream());
 
             } else {
-
                 // Attempt to load from the class path (as in JAR file..)
                 URL url = getClass().getResource(source.startsWith("/") ? source : "/" + source);
                 if (url != null) {
